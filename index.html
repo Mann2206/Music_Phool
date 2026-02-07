@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Active Side Quest</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="app">
+
+  <!-- START SCREEN -->
+  <section id="start" class="screen active">
+    <h1 class="title glitch">ACTIVE SIDE QUEST</h1>
+    <p class="subtitle">Observe what blooms when you’re not min-maxing.</p>
+    <button onclick="startQuest()">▶ START SIDE QUEST</button>
+  </section>
+
+  <!-- MAP SCREEN -->
+  <section id="map" class="screen">
+    <h2 class="section-title">QUEST MAP</h2>
+    <div id="grid" class="grid"></div>
+    <button onclick="goHome()">◀ Abort Mission</button>
+  </section>
+
+  <!-- PATCH SCREEN -->
+  <section id="patch" class="screen">
+    <img id="patchImage" />
+    <h2 id="patchTitle"></h2>
+    <ul id="patchNotes"></ul>
+
+    <button onclick="runUpdate()">RUN UPDATE</button>
+    <pre id="poem"></pre>
+
+    <button onclick="goToMap()">◀ Return</button>
+  </section>
+
+  <!-- REFLECTION SCREEN -->
+  <section id="reflection" class="screen">
+    <h2 class="section-title">INTEGRATION CHECK</h2>
+    <p class="subtitle">What did these patches actually teach?</p>
+
+    <button onclick="toggleHints()">📖 Review Patch Notes</button>
+    <div id="hintBox" class="hidden"></div>
+
+    <div id="questions"></div>
+
+    <button onclick="submitReflection()">▶ Submit Reflection</button>
+  </section>
+
+  <!-- RESULT SCREEN -->
+  <section id="result" class="screen">
+    <h2 class="section-title">REFLECTION SUMMARY</h2>
+    <div id="resultText"></div>
+    <button onclick="unlockSecret()">▶ Continue</button>
+  </section>
+
+  <!-- SECRET SCREEN -->
+  <section id="secret" class="screen">
+    <pre id="secretTerminal"></pre>
+    <button onclick="goHome()">◀ Reboot World</button>
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
